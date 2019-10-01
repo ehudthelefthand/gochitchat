@@ -13,13 +13,22 @@ body {
 }
 
 /* Navigation */
-.navbar ul {
-  margin: 0;
+.navbar {
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
-  list-style: none;
   background: #000;
+}
+
+.navbar ul {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0 10px;
 }
 
 .navbar a {
@@ -47,8 +56,7 @@ body {
   padding: 5px;
   border: 1px solid #000;
   border-radius: 5px;
-  width: 100%;
-  max-width: 270px;
+  flex: 0 0 270px;
 }
 
 .login button {
