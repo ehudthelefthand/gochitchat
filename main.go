@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -15,5 +17,9 @@ func main() {
 		Addr:    "127.0.0.1:8000",
 		Handler: mux,
 	}
-	server.ListenAndServe()
+
+	fmt.Println("server start at port 8000")
+	if err := server.ListenAndServe(); err != nil {
+		log.Fatal(err)
+	}
 }
