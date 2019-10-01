@@ -1,10 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"text/template"
 )
 
 func login(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "login")
+	files := []string{
+		"view/layout.html",
+		"view/nav.html",
+		"view/login.html",
+	}
+	template := template.Must(template.ParseFiles(files...))
+	template.ExecuteTemplate(w, "layout", struct{}{})
 }
